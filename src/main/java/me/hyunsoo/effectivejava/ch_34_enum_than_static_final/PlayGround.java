@@ -4,12 +4,10 @@ import java.util.Arrays;
 
 public class PlayGround {
     public static void main(String[] args) {
-        Arrays.asList(Planet.values()).stream().forEach(System.out::println);
-        System.out.println(Planet.EARTH.surfaceGravity());
-        System.out.println(Planet.EARTH.mass());
-
-        assert Planet.EARTH.equals(Planet.EARTH);
-
-        assert "EARTH" == Planet.EARTH.name();
+        // Enum은 Operaion.values()를 통해, loop 조회가 가능
+        Arrays.stream(Operation.values())
+                .forEach((operation) -> {
+                    System.out.println(operation.apply(4, 2) + " operation :" + operation);
+                });
     }
 }
